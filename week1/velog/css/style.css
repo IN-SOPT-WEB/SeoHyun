@@ -74,6 +74,16 @@ header i {
   height: 25px;
   border: 1px solid black;
   border-radius: 15px;
+
+  text-decoration: none;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: bold;
 }
 
 #newPost:hover {

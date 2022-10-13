@@ -51,8 +51,8 @@
           <i class="material-icons">schedule</i>
           <span>최신</span>
         </button>
-        <button>
-          이번 주
+        <button id="dropDownButton">
+          <span> 오늘 </span>
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -65,6 +65,12 @@
             <path d="M7 10l5 5 5-5z"></path>
           </svg>
         </button>
+        <ul class="hidden" id="dropDownList">
+          <li class="listButton selectedButton" id="todayButton">오늘</li>
+          <li class="listButton" id="weekButton">이번 주</li>
+          <li class="listButton" id="monthButton">이번 달</li>
+          <li class="listButton" id="yearButton">올해</li>
+        </ul>
       </div>
       <button>
         <i class="material-icons" style="color: #868e96; font-size: 20px">
@@ -435,5 +441,7 @@
         </div>
       </article>
     </section>
+
+    <script src="dropdown.js"></script>
   </body>
 </html>

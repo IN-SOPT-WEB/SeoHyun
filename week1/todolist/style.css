@@ -1,3 +1,22 @@
+.hidden {
+  width: 0;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+
+  transition-duration: 0.3s;
+}
+
+.line {
+  border-right: 0.5px solid black;
+}
+
+i {
+  pointer-events: none;
+}
+
+/**********/
+
 body {
   width: 800px;
   height: 100vh;
@@ -36,6 +55,10 @@ nav button {
   background-color: #ffd0cd;
 }
 
+nav button:hover {
+  background-color: #ff6a65;
+}
+
 /* section */
 
 .section {
@@ -43,20 +66,17 @@ nav button {
   height: 79%;
 }
 
-.left-section {
-  border-right: solid 1.5px black;
-}
-
 section {
   display: flex;
   flex-direction: column;
-  width: 400px;
   padding: 20px 25px;
+  width: 100%;
 }
 
 section h2 {
   font-size: 15px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* list */
@@ -84,23 +104,30 @@ li {
 li button {
   border: none;
   background: none;
+  width: 40px;
+  height: 40px;
+}
+
+li button:hover {
+  background-color: rgb(211, 211, 211);
+  border-radius: 30px;
 }
 
 /* add_list */
 
-.add {
+.addForm {
   margin-top: auto;
   margin-bottom: 10px;
 }
 
-section input {
+.addForm input {
   box-sizing: border-box;
-  width: 85%;
+  width: calc(100% - 50px);
 }
 
-section button {
+.addForm button {
   box-sizing: border-box;
-  width: 15%;
+  width: 50px;
 }
 
 /* footer */

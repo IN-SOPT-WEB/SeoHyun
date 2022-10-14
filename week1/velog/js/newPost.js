@@ -10,8 +10,6 @@ function createTagButton() {
   });
 
   tagForm.before(newTagButton);
-
-  tagInput.value = "";
 }
 
 function newPost() {
@@ -20,19 +18,19 @@ function newPost() {
 
   tagForm.addEventListener("submit", (event) => {
     event.preventDefault();
+
     const tagButton = document.querySelectorAll(".tagButton");
-    let count = 0;
-    tagButton.forEach((item) => {
-      if (tagInput.value === item.innerText) {
-        count++;
-      }
-    });
-    if (count == 0) {
+    var arrTagButton = Array.prototype.slice.call(tagButton);
+
+    // 같은 태그가 이미 있는지 확인
+    const isThereSameThing = (currentValue) =>
+      currentValue.innerText !== tagInput.value;
+    if (arrTagButton.every(isThereSameThing)) {
       createTagButton();
     } else {
-      count--;
-      tagInput.value = "";
+      alert("이미 같은 태그가 있습니다.");
     }
+    tagInput.value = "";
   });
 }
 

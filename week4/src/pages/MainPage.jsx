@@ -13,7 +13,7 @@ export default function MainPage() {
 }
 
 const Container = styled.div`
-  background-color: #b4b4ff;
+  background-color: #f2eee5;
   width: 900px;
   height: 100vh;
 

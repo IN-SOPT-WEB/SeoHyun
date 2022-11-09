@@ -17,7 +17,7 @@ const Container = styled.div`
   flex-wrap: wrap;
 
   position: relative;
-  top: 70px;
+  top: 50px;
 
   background-color: #000000;
   opacity: 30%;

@@ -1,11 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function SearchBox() {
+  const navigate = useNavigate();
+
+  const handleOnKeyPress = (e) => {
+    if (e.key == "Enter") {
+      const userId = e.target.value;
+      navigate(`/search/${userId}`);
+    }
+  };
+
   return (
     <Container>
       <Title>Github Profile Finder</Title>
-      <SearchBar placeholder="Github username..."></SearchBar>
+      <SearchBar
+        placeholder="Github username..."
+        onKeyPress={handleOnKeyPress}
+      ></SearchBar>
     </Container>
   );
 }

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useNavigate } from "react";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import SearchBox from "../components/SearchBox";
-import UserInfo from "../components/UserInfo";
 
 export default function MainPage() {
   return (
     <Container>
       <SearchBox />
-      <UserInfo />
+      <Outlet />
     </Container>
   );
 }

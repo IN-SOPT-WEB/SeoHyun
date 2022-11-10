@@ -1,14 +1,17 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import MainPage from "./pages/MainPage";
-import ResultPage from "./pages/ResultPage";
+import UserInfo from "./components/UserInfo";
 
 function App() {
+  const [userId, setUserId] = useState("");
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/search" element={<MainPage />}>
-          <Route path=":userId" element={<ResultPage />}></Route>
+          <Route path=":userId" element={<UserInfo />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

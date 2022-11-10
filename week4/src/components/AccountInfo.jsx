@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function AccountInfo({ infoName }) {
+export default function AccountInfo({ infoName, data }) {
   return (
     <Container>
       <InfoName>{infoName}</InfoName>
-      <Number>80</Number>
+      <Number>
+        {infoName === "Followers"
+          ? data.followers
+          : infoName === "Following"
+          ? data.following
+          : data.public_repos}
+      </Number>
     </Container>
   );
 }

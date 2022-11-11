@@ -5,7 +5,12 @@ import MainPage from "./pages/MainPage";
 import UserInfo from "./components/UserInfo";
 
 function App() {
-  const [userId, setUserId] = useState("");
+  //const [history, setHistory] = useState(["hi", "me"]);
+  //const arrString = JSON.stringify(history);
+
+  //window.localStorage.setItem("history", arrString);
+
+  //console.log(arrString);
 
   return (
     <BrowserRouter>

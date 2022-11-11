@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AccountInfo from "./AccountInfo";
 import axios from "axios";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function UserInfo() {
   const navigate = useNavigate();
@@ -61,9 +61,9 @@ const Container = styled.div`
   position: relative;
   top: 70px;
 
-  background-color: #000000;
-  opacity: 30%;
+  background-color: #f0b2ad;
   font-size: 32px;
+
   font-weight: bold;
 
   width: 600px;
@@ -81,6 +81,7 @@ const CloseButton = styled.button`
   font-size: 20px;
 
   background: none;
+  border: none;
 `;
 
 const Image = styled.img`
@@ -113,6 +114,7 @@ const VisitBt = styled.button`
 
   &:hover {
     background-color: #686868;
+    font-weight: bold;
   }
 `;
 
@@ -121,7 +123,6 @@ const Container2 = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  background-color: black;
   width: 500px;
   height: 120px;
   margin: 10px 0;

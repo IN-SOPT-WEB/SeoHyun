@@ -1,4 +1,4 @@
-import React, { useNavigate } from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import SearchBox from "../components/SearchBox";

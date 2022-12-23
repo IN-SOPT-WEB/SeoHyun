@@ -1,11 +1,11 @@
-import Entry from "pages/Entry";
 import GlobalStyle from "./styles/globalStyle";
+import Router from "./components/Router";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Entry />
+      <Router />
     </>
   );
 };

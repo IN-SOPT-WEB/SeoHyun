@@ -1,11 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Entry = () => {
+  const navigate = useNavigate();
   return (
     <StContainer>
       <StTitle>웹파트 비밀 편지함</StTitle>
 
-      <StButton>편지 쓰러가기</StButton>
+      <StButton type="button" onClick={() => navigate("/Write")}>
+        편지 쓰러가기
+      </StButton>
     </StContainer>
   );
 };

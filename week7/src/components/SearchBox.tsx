@@ -24,6 +24,7 @@ export default function SearchBox() {
       }
       navigate(`/search/${userId}`);
       setShow(false);
+      (document.activeElement as HTMLElement).blur();
     }
   }, [userId]);
 

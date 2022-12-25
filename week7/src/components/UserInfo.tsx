@@ -1,30 +1,47 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AccountInfo from "./AccountInfo";
-// import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { getGithubProfile } from "utils/lib/searchUser";
+
+interface userData {
+  followers: Number | null;
+  following: Number | null;
+  repos: Number | null;
+  avatar_url: string | null;
+  name: string | null;
+}
 
 export default function UserInfo() {
   const navigate = useNavigate();
   const { userId } = useParams();
-  const [data, setData] = useState({});
-
-  async function getGithubProfile() {
-    // const response = await axios.get(`https://api.github.com/users/${userId}`);
-    // setData(response.data);
-  }
+  const [userData, setUserData] = useState<userData>({
+    followers: null,
+    following: null,
+    repos: null,
+    avatar_url: null,
+    name: null,
+  });
+  const [accountInfoList, setAccountInfoList] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    getGithubProfile();
+    const getUserData = async () => {
+      const { data } = await getGithubProfile(userId);
+      const userData = {
+        followers: data.followers,
+        following: data.following,
+        repos: data.public_repos,
+        avatar_url: data.avatar_url,
+        name: data.name,
+      };
+      setUserData(userData);
+      const getAccountInfoList = ["Followers", "Following", "Repos"].map(
+        (item) => <AccountInfo key={item} infoName={item} userData={userData} />
+      );
+      setAccountInfoList(getAccountInfoList);
+    };
+    getUserData();
   }, [userId]);
-
-  // 렌더링
-  const accountInfos = ["Followers", "Following", "Repos"];
-  const accountInfoList = accountInfos.map((item) => (
-    <AccountInfo infoName={item} key={item} data={data}>
-      {item}
-    </AccountInfo>
-  ));
 
   return (
     <Container>
@@ -35,9 +52,9 @@ export default function UserInfo() {
       >
         X
       </CloseButton>
-      <Image src={data.avatar_url} alt="~의 의미지" />
+      <Image src={userData.avatar_url || ""} alt="~의 의미지" />
       <br />
-      <User id="userName">{data.name}</User>
+      <User id="userName">{userData.name}</User>
       <User id="userId">{userId}</User>
       <VisitBt
         onClick={() => {

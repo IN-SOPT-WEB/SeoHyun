@@ -1,16 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-interface AccountData {
-  infoName: string;
-  userData: {
-    followers: Number | null;
-    following: Number | null;
-    repos: Number | null;
-    avatar_url: string | null;
-    name: string | null;
-  };
-}
+import { AccountData } from "types/userInfo";
 
 export default function AccountInfo({ infoName, userData }: AccountData) {
   console.log(userData);

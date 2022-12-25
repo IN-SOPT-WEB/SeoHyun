@@ -3,14 +3,7 @@ import styled from "styled-components";
 import AccountInfo from "./AccountInfo";
 import { useNavigate, useParams } from "react-router-dom";
 import { getGithubProfile } from "utils/lib/searchUser";
-
-interface userData {
-  followers: Number | null;
-  following: Number | null;
-  repos: Number | null;
-  avatar_url: string | null;
-  name: string | null;
-}
+import { userData } from "types/userInfo";
 
 export default function UserInfo() {
   const navigate = useNavigate();

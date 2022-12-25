@@ -1,16 +1,25 @@
-import React from "react";
+import { Dispatch, SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function History({ setShow, item, history, setHistory }) {
+interface HistoryData {
+  item: string;
+  history: string[];
+  setHistory: Dispatch<SetStateAction<string[]>>;
+  setShow: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function History(props: HistoryData) {
+  const { item, history, setHistory, setShow } = props;
   const navigate = useNavigate();
-  const handleClick = (e) => {
-    const userId = e.target.innerText;
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const userId = e.currentTarget.innerText;
     navigate(`/search/${userId}`);
     setShow(false);
   };
-  const handleDelete = (e) => {
-    setHistory(history.filter((item) => item !== e.target.id));
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setHistory(history.filter((item) => item !== e.currentTarget.id));
   };
   return (
     <Container>

@@ -45,7 +45,7 @@ export default function UserInfo() {
       >
         X
       </CloseButton>
-      <Image src={userData.avatar_url || ""} alt="~의 의미지" />
+      <Image src={userData.avatar_url || ""} alt={`${userId}의 프로필 사진`} />
       <br />
       <User id="userName">{userData.name}</User>
       <User id="userId">{userId}</User>

@@ -1,16 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function AccountInfo({ infoName, data }) {
+interface AccountData {
+  infoName: string;
+  userData: {
+    followers: Number | null;
+    following: Number | null;
+    repos: Number | null;
+    avatar_url: string | null;
+    name: string | null;
+  };
+}
+
+export default function AccountInfo({ infoName, userData }: AccountData) {
+  console.log(userData);
   return (
     <Container>
       <InfoName>{infoName}</InfoName>
       <Number>
-        {infoName === "Followers"
-          ? data.followers
+        {/* {infoName === "Followers"
+          ? userData.followers
           : infoName === "Following"
-          ? data.following
-          : data.public_repos}
+          ? userData.following
+          : userData.repos} */}
       </Number>
     </Container>
   );

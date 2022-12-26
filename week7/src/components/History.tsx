@@ -14,9 +14,7 @@ export default function History(props: HistoryData) {
   const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
     const userId = e.currentTarget.innerText;
-    console.log(userId);
     navigate(`/search/${userId}`);
     setShow(false);
   };

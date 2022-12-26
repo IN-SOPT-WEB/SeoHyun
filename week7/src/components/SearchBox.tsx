@@ -17,7 +17,6 @@ export default function SearchBox() {
 
   useEffect(() => {
     if (userId) {
-      console.log(userId);
       if (!history.includes(userId)) {
         setHistory([userId, ...history]);
       }

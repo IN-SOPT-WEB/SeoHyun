@@ -5,7 +5,6 @@ import History from "./History";
 
 export default function SearchBox() {
   const navigate = useNavigate();
-
   const [history, setHistory] = useState<string[]>([]);
   const [show, setShow] = useState<boolean>(false);
   const [userId, setUserId] = useState<string | null>(null);

@@ -9,8 +9,10 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Entry />} />
-        <Route path="/write" element={<Write />} /> */}
+        {/* 7차 세미나 UI Page */}
+        <Route path="/Entry" element={<Entry />} />
+        <Route path="/write" element={<Write />} />
+        {/* 깃프파 Page */}
         <Route path="/search" element={<Main />}>
           <Route path=":userId" element={<UserInfo />}></Route>
         </Route>

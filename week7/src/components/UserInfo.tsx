@@ -8,6 +8,7 @@ import { userData } from "types/userInfo";
 export default function UserInfo() {
   const navigate = useNavigate();
   const { userId } = useParams();
+
   const [userData, setUserData] = useState<userData>({
     followers: null,
     following: null,

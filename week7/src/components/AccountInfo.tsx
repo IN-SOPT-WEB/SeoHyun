@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { AccountData } from "types/userInfo";
 
@@ -8,11 +7,11 @@ export default function AccountInfo({ infoName, userData }: AccountData) {
     <Container>
       <InfoName>{infoName}</InfoName>
       <Number>
-        {/* {infoName === "Followers"
-          ? userData.followers
+        {infoName === "Followers"
+          ? String(userData.followers)
           : infoName === "Following"
-          ? userData.following
-          : userData.repos} */}
+          ? String(userData.following)
+          : String(userData.repos)}
       </Number>
     </Container>
   );

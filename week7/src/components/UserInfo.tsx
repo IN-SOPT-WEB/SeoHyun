@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import AccountInfo from "./AccountInfo";
 import { useNavigate, useParams } from "react-router-dom";
@@ -28,6 +28,7 @@ export default function UserInfo() {
         name: data.name,
       };
       setUserData(userData);
+      //렌더링
       const getAccountInfoList = ["Followers", "Following", "Repos"].map(
         (item) => <AccountInfo key={item} infoName={item} userData={userData} />
       );

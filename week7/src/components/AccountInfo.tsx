@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { AccountData } from "types/userInfo";
 
 export default function AccountInfo({ infoName, userData }: AccountData) {
-  console.log(userData);
   return (
     <Container>
       <InfoName>{infoName}</InfoName>

@@ -71,6 +71,9 @@ const StInputBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  & .hidden {
+    display: none;
+  }
 `;
 const StLabel = styled.label`
   font-size: 30px;
@@ -82,9 +85,6 @@ const StInput = styled.input`
 
   border-radius: 20px;
   border: none;
-  & .hidden {
-    display: none;
-  }
 `;
 const StFileBtn = styled.button`
   height: 50px;

@@ -1,3 +1,9 @@
+.hidden {
+  visibility: hidden;
+}
+
+/********/
+
 body {
   width: 1024px;
   margin: 0 auto;
@@ -68,6 +74,16 @@ header i {
   height: 25px;
   border: 1px solid black;
   border-radius: 15px;
+
+  text-decoration: none;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: bold;
 }
 
 #newPost:hover {
@@ -99,6 +115,7 @@ nav {
 }
 
 nav div {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
@@ -149,6 +166,40 @@ nav div button:nth-child(3) {
   border: 0;
   padding: 0 8px;
   background-color: white;
+}
+
+#dropDownList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  right: 0;
+  top: 40px;
+
+  width: 100px;
+  height: 140px;
+
+  background-color: white;
+}
+
+#dropDownList li {
+  display: flex;
+  align-items: center;
+
+  padding: 0 7px;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  flex-grow: 1;
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.selectedButton {
+  color: rgb(54, 190, 156);
+}
+
+#dropDownList li:hover {
+  background-color: rgb(231, 231, 231);
 }
 
 nav svg {
